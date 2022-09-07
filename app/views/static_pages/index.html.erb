@@ -1,0 +1,12 @@
+<%= form_with(model: @static_page, method: "get") do |form| %>
+<%= "Enter a Flickr user's ID to see all photos from that user" %><br><br>
+  <%= form.label :user_id %>
+  <%= form.text_field :user_id %>
+  <%= form.submit "Show Photos" %>
+<% end %>
+
+<% if @photos%>
+  <% @photos.each do |photo| %>
+    <%= image_tag "#{Flickr.url_z(photo)}" %>
+  <% end %>
+<% end %>

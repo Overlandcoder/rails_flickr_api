@@ -1,0 +1,6 @@
+<%= form_with(model: @static_page, url: static_pages_path, method: "get") do |form| %>
+<%= "Enter a Flickr user's ID to see all photos from that user" %><br><br>
+  <%= form.label :user_id %>
+  <%= form.text_field :user_id %>
+  <%= form.submit "Show Photos" %>
+<% end %>
